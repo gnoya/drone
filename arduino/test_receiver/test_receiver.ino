@@ -1,13 +1,13 @@
 #include <PinChangeInt.h>
 #include <Servo.h>
-#define MY_PIN 5 // we could choose any pin
+#define THROTTLE_PIN 10 // we could choose any pin
  
 volatile int pwm_value = 0;
 volatile int prev_time = 0;
 uint8_t latest_interrupted_pin;
 
 int value = 1000;
-Servo firstESC;
+Servo firstESC, secondESC, thirdESC, fourthESC;
 
 void rising()
 {
@@ -27,13 +27,19 @@ void falling() {
 }
  
 void setup() {
-  pinMode(MY_PIN, INPUT); digitalWrite(MY_PIN, HIGH);
-  firstESC.attach(3);
+  pinMode(THROTTLE_PIN, INPUT); digitalWrite(THROTTLE_PIN, HIGH);
+  firstESC.attach(4);
+  secondESC.attach(5);
+  thirdESC.attach(6);
+  fourthESC.attach(7);
   Serial.begin(115200);
-  PCintPort::attachInterrupt(MY_PIN, &rising, RISING);
+  PCintPort::attachInterrupt(THROTTLE_PIN, &rising, RISING);
 }
 
 void loop() {
   firstESC.writeMicroseconds(value);
+  secondESC.writeMicroseconds(value);
+  thirdESC.writeMicroseconds(value);
+  fourthESC.writeMicroseconds(value);
   Serial.println(value);
 }
