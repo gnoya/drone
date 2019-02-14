@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\graphicspath{{./Figures/}}
+
+\usepackage{cite}  % converts [1],[2] to [1,2]
+\makeatletter
+\def\@citex[#1]#2{\leavevmode
+\let\@citea\@empty
+\@cite{\@for\@citeb:=#2\do
+{\@citea\def\@citea{,\penalty\@m\ }%
+\edef\@citeb{\expandafter\@firstofone\@citeb\@empty}%
+\if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
+\@ifundefined{b@\@citeb}{\hbox{\reset@font\bfseries ?}%
+\G@refundefinedtrue
+\@latex@warning
+{Citation `\@citeb' on page \thepage \space undefined}}%
+{\@cite@ofmt{\csname b@\@citeb\endcsname}}}}{#1}}
+\makeatother
+
+
+%\usepackage{dblfloatfix}
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Lectura y Monitoreo Inalámbrico de Sensores y Controladores de un Cuadricóptero utilizando ROS
+}
+
+
+\author{Gabriel Noya Doval$^{1}$, Carlos Serrano Barreto$^{1}$% <-this % stops a space
+%\thanks{*This work was not supported by any organization}% <-this % stops a space
+\thanks{$^{1}$Grupo de Investigación de Mecatrónica, Universidad Simón Bolívar, Caracas, Venezuela.
+        {\tt\small \{13-10982, 13-00000\}@usb.ve}}%
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+Resumen hehexD
+\\
+\end{abstract}
+
+\begin{keywords}
+Cuadricóptero, controladores, sensores, ROS
+\end{keywords}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{DESCRIPCIÓN DEL PROYECTO}
+
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+%\begin{figure}[htpb]
+%	\centering
+%	\includegraphics[width=0.99\columnwidth]{histogram}
+%	\caption{Histogram of pixels inside the roundabout bounding box in Figure~\ref{stereo_results_example_2} versus the distance they represent. In this example, the distance of the traffic sign to the vehicle is 11.6 meters.}
+%	\label{disparity_histogram}
+%\end{figure}
+
+\section{DESCRIPCIÓN DEL CUADRICÓPTERO}
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+\section{PROCEDIMIENTO}
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+\subsection{DIAGRAMA DE BLOQUES}
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+\subsection{PAQUETES A UTILIZAR}
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+
+
+\section{CRONOGRAMA DE ACTIVIDADES}
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+Bla bla bla bla Bla bla bla bla Bla bla bla bla Bla bla bla bla
+
+
+%\addtolength{\textheight}{-7cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{APPENDIX}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{thebibliography}{99}
+%\item 
+%\end{thebibliography}
+
+
+\bibliography{references}
+\bibliographystyle{ieeetr}
+
+\end{document}
