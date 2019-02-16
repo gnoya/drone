@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{ypr}
+``Yaw pitch roll image.''
+  \url{http://espygolfapp.com/game-management-how-to-get-better-at-golf/how-to-use-the-golf-team-coaching-app/techniques-of-the-golf-team-coaching-app/yaw-pitch-roll-image/}.
+\newblock Revisado el: 2019-02-15.
+
+\bibitem{raspbian}
+``Download raspbian for raspberry pi.''
+  \url{https://www.raspberrypi.org/downloads/raspbian/}.
+\newblock Revisado el: 2019-02-15.
+
+\bibitem{rosserial}
+``rosserial.'' \url{http://wiki.ros.org/rosserial}.
+\newblock Revisado el: 2019-02-15.
+
+\bibitem{rosserialarduino}
+``rosserial\textunderscore arduino.''
+  \url{http://wiki.ros.org/rosserial_arduino}.
+\newblock Revisado el: 2019-02-15.
+
+\bibitem{rosbridge}
+``rosbridge\textunderscore suite.'' \url{http://wiki.ros.org/rosbridge_suite}.
+\newblock Revisado el: 2019-02-15.
+
+\end{thebibliography}
