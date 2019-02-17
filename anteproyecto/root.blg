@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: root.aux
@@ -46,3 +47,8 @@ while$ -- 0
 width$ -- 0
 write$ -- 2
 (There was 1 error message)
+=======
+This is BibTeX, Version 0.99dThe top-level auxiliary file: root.aux
+The style file: ieeetr.bst
+Database file #1: references.bib
+>>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427

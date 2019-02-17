@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.16)  17 FEB 2019 18:42
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.4)  16 FEB 2019 00:26
+>>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,7 +398,66 @@ Missing character: There is no “ in font ptmrc7t!
 Missing character: There is no Ã in font ptmrc7t!
 Missing character: There is no “ in font ptmrc7t!
 
-No file root.bbl.
+<./figures/angles.jpg, id=1, 198.7425pt x 146.04562pt>
+File: ./figures/angles.jpg Graphic file (type jpg)
+<use ./figures/angles.jpg>
+Package pdftex.def Info: ./figures/angles.jpg  used on input line 93.
+(pdftex.def)             Requested size: 243.26227pt x 178.76591pt.
+
+Underfull \hbox (badness 5893) in paragraph at lines 106--107
+[]\OT1/ptm/m/n/10 Para cono-cer los []angulos \OT1/ptm/m/it/10 yaw, pitch \OT1/
+ptm/m/n/10 y \OT1/ptm/m/it/10 roll \OT1/ptm/m/n/10 del
+ []
+
+[1{C:/Users/Gabriel Noya/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <./figures/angles.jpg>]
+Underfull \hbox (badness 5050) in paragraph at lines 131--132
+[]\OT1/ptm/m/n/10 Se uti-lizar[]an los pa-que-tes \OT1/ptm/b/n/10 rosse-rial \O
+T1/ptm/m/n/10 [[]] y \OT1/ptm/b/n/10 rosse-
+ []
+
+(root.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/ptm/m/n/8 ``Yaw pitch roll im-age.'' $\OT1/pcr/m/n/8 http : / / espygolf
+app . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+\OT1/pcr/m/n/8 game-[]management-[]how-[]to-[]get-[]better-[]at-[]golf /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+\OT1/pcr/m/n/8 how-[]to-[]use-[]the-[]golf-[]team-[]coaching-[]app /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+\OT1/pcr/m/n/8 techniques-[]of-[]the-[]golf-[]team-[]coaching-[]app /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
+[]\OT1/ptm/m/n/8 ``Download rasp-bian for rasp-berry pi.'' $\OT1/pcr/m/n/8 http
+s : / / www .
+ []
+
+
+Underfull \hbox (badness 4060) in paragraph at lines 9--12
+\OT1/pcr/m/n/8 raspberrypi . org / downloads / raspbian/$\OT1/ptm/m/n/8 .  Re-v
+isado el:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
+[]\OT1/ptm/m/n/8 ``rosserial[]arduino.'' $\OT1/pcr/m/n/8 http : / / wiki . ros 
+. org / rosserial _
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -406,6 +469,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
+<<<<<<< HEAD
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -430,6 +494,33 @@ Output written on root.pdf (1 page, 72893 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
+=======
+[2
+
+] (root.aux) ) 
+Here is how much of TeX's memory you used:
+ 3375 strings out of 492946
+ 50207 string characters out of 3123157
+ 117924 words of memory out of 3000000
+ 7207 multiletter control sequences out of 15000+200000
+ 42515 words of font info for 96 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,9n,27p,824b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/base/8r.enc}<C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Gabriel Noya/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Gabriel Noya/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/
+Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/uc
+rr8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
+rw/times/utmb8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/times/utmbi8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Gabriel Noya/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root.pdf (2 pages, 110876 bytes).
+PDF statistics:
+ 43 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
