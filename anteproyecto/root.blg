@@ -1,40 +1,38 @@
-<<<<<<< HEAD
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: root.aux
 The style file: ieeetr.bst
-I found no \citation commands---while reading file root.aux
 Database file #1: references.bib
-You've used 0 entries,
+You've used 5 entries,
             1876 wiz_defined-function locations,
-            477 strings with 3468 characters,
-and the built_in function-call counts, 20 in all, are:
-= -- 0
-> -- 0
+            492 strings with 3995 characters,
+and the built_in function-call counts, 582 in all, are:
+= -- 60
+> -- 5
 < -- 0
-+ -- 0
++ -- 5
 - -- 0
-* -- 2
-:= -- 9
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+* -- 17
+:= -- 66
+add.period$ -- 10
+call.type$ -- 5
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
+cite$ -- 5
+duplicate$ -- 20
+empty$ -- 91
 format.name$ -- 0
-if$ -- 1
+if$ -- 161
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 5
 missing$ -- 0
-newline$ -- 3
+newline$ -- 23
 num.names$ -- 0
-pop$ -- 0
+pop$ -- 40
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 15
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -44,11 +42,5 @@ top$ -- 0
 type$ -- 0
 warning$ -- 0
 while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
-=======
-This is BibTeX, Version 0.99dThe top-level auxiliary file: root.aux
-The style file: ieeetr.bst
-Database file #1: references.bib
->>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
+width$ -- 6
+write$ -- 42

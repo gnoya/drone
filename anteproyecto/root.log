@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.16)  17 FEB 2019 18:42
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.4)  16 FEB 2019 00:26
->>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.16)  18 FEB 2019 10:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -207,6 +203,354 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
+Package: pgfgantt 2013/06/01 v4.0 Draw Gantt diagrams with TikZ
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks21
+\pgfutil@tempdima=\dimen124
+\pgfutil@tempdimb=\dimen125
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box29
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks22
+\pgfkeys@temptoks=\toks23
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks24
+))
+\pgf@x=\dimen126
+\pgf@y=\dimen127
+\pgf@xa=\dimen128
+\pgf@ya=\dimen129
+\pgf@xb=\dimen130
+\pgf@yb=\dimen131
+\pgf@xc=\dimen132
+\pgf@yc=\dimen133
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count104
+\c@pgf@countb=\count105
+\c@pgf@countc=\count106
+\c@pgf@countd=\count107
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count108
+\pgfsyssoftpath@bigbuffer@items=\count109
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen134
+\pgfmath@count=\count110
+\pgfmath@box=\box30
+\pgfmath@toks=\toks28
+\pgfmath@stack@operand=\toks29
+\pgfmath@stack@operation=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count111
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen135
+\pgf@picmaxx=\dimen136
+\pgf@picminy=\dimen137
+\pgf@picmaxy=\dimen138
+\pgf@pathminx=\dimen139
+\pgf@pathmaxx=\dimen140
+\pgf@pathminy=\dimen141
+\pgf@pathmaxy=\dimen142
+\pgf@xx=\dimen143
+\pgf@xy=\dimen144
+\pgf@yx=\dimen145
+\pgf@yy=\dimen146
+\pgf@zx=\dimen147
+\pgf@zy=\dimen148
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen149
+\pgf@path@lasty=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen151
+\pgf@shorten@start@additional=\dimen152
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count112
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen153
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen154
+\pgf@pt@y=\dimen155
+\pgf@pt@temp=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen157
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen158
+\pgf@sys@shading@range@num=\count113
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box34
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box35
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen159
+\pgf@nodesepend=\dimen160
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen161
+\pgffor@skip=\dimen162
+\pgffor@stack=\toks31
+\pgffor@toks=\toks32
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count114
+\pgfplotmarksize=\dimen163
+)
+\tikz@lastx=\dimen164
+\tikz@lasty=\dimen165
+\tikz@lastxsaved=\dimen166
+\tikz@lastysaved=\dimen167
+\tikzleveldistance=\dimen168
+\tikzsiblingdistance=\dimen169
+\tikz@figbox=\box36
+\tikz@figbox@bg=\box37
+\tikz@tempbox=\box38
+\tikz@tempbox@bg=\box39
+\tikztreelevel=\count115
+\tikznumberofchildren=\count116
+\tikznumberofcurrentchild=\count117
+\tikz@fig@count=\count118
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count119
+\pgfmatrixcurrentcolumn=\count120
+\pgf@matrix@numberofcolumns=\count121
+)
+\tikz@expandcount=\count122
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen170
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
+\pgf@layerbox@background=\box40
+\pgf@layerboxsaved@background=\box41
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+File: pgfcalendar.code.tex 2007/07/23 v3.0.1a (rcs-revision 1.11)
+\pgfcalendarcurrentjulian=\count123
+))
+\gtt@currentline=\count124
+\gtt@lasttitleline=\count125
+\gtt@currgrid=\count126
+\gtt@chartwidth=\count127
+\gtt@lasttitleslot=\count128
+\gtt@elementid=\count129
+\gtt@today@slot=\count130
+\gtt@startjulian=\count131
+\gtt@endjulian=\count132
+\gtt@calendar@slots=\count133
+\gtt@calendar@weeknumber=\count134
+\gtt@calendar@startofweek=\count135
+\gtt@left@slot=\count136
+\gtt@right@slot=\count137
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen171
+\extrarowheight=\dimen172
+\NC@list=\toks33
+\extratabsurround=\skip50
+\backup@length=\skip51
+)
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 
@@ -232,76 +576,79 @@ Package subfigure Warning: Your document class has a bad definition
  can't take effect on \endtable.
  Please complain to your document class author.
 
-\subfigtopskip=\skip50
-\subfigcapskip=\skip51
-\subfigcaptopadj=\dimen124
-\subfigbottomskip=\skip52
-\subfigcapmargin=\dimen125
-\subfiglabelskip=\skip53
-\c@subfigure=\count104
-\c@lofdepth=\count105
-\c@subtable=\count106
-\c@lotdepth=\count107
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen173
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen174
+\subfiglabelskip=\skip55
+\c@subfigure=\count138
+\c@lofdepth=\count139
+\c@subtable=\count140
+\c@lotdepth=\count141
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip54
-\subfig@bottom=\skip55
+\subfig@top=\skip56
+\subfig@bottom=\skip57
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen126
-\lightrulewidth=\dimen127
-\cmidrulewidth=\dimen128
-\belowrulesep=\dimen129
-\belowbottomsep=\dimen130
-\aboverulesep=\dimen131
-\abovetopsep=\dimen132
-\cmidrulesep=\dimen133
-\cmidrulekern=\dimen134
-\defaultaddspace=\dimen135
-\@cmidla=\count108
-\@cmidlb=\count109
-\@aboverulesep=\dimen136
-\@belowrulesep=\dimen137
-\@thisruleclass=\count110
-\@lastruleclass=\count111
-\@thisrulewidth=\dimen138
+\heavyrulewidth=\dimen175
+\lightrulewidth=\dimen176
+\cmidrulewidth=\dimen177
+\belowrulesep=\dimen178
+\belowbottomsep=\dimen179
+\aboverulesep=\dimen180
+\abovetopsep=\dimen181
+\cmidrulesep=\dimen182
+\cmidrulekern=\dimen183
+\defaultaddspace=\dimen184
+\@cmidla=\count142
+\@cmidlb=\count143
+\@aboverulesep=\dimen185
+\@belowrulesep=\dimen186
+\@thisruleclass=\count144
+\@lastruleclass=\count145
+\@thisrulewidth=\dimen187
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (./root.aux)
+) (./root.aux
+
+LaTeX Warning: Label `yaw_pitch_roll' multiply defined.
+
+)
 \openout1 = `root.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen139
-\scratchbox=\box29
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen140
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count146
+\scratchdimen=\dimen188
+\scratchbox=\box42
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen189
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -350,17 +697,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+ABD: EveryShipout initializing macros
 Missing character: There is no √ in font ptmb7t!
 Missing character: There is no ° in font ptmb7t!
 Missing character: There is no √ in font ptmb7t!
 Missing character: There is no ≥ in font ptmb7t!
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 72.
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 74.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -377,48 +725,222 @@ Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ≥ in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ≠ in font ptmr7t!
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 72.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
+Missing character: There is no √ in font ptmb7t!
+Missing character: There is no ≥ in font ptmb7t!
+Missing character: There is no √ in font ptmb7t!
+Missing character: There is no ≠ in font ptmb7t!
+Missing character: There is no √ in font ptmb7t!
+Missing character: There is no ° in font ptmb7t!
 Missing character: There is no √ in font ptmb7t!
 Missing character: There is no ≥ in font ptmb7t!
 Missing character: There is no √ in font ptmrc7t!
 Missing character: There is no ì in font ptmrc7t!
-Missing character: There is no √ in font ptmrc7t!
-Missing character: There is no ì in font ptmrc7t!
-Missing character: There is no √ in font ptmrc7t!
-Missing character: There is no ì in font ptmrc7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≠ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
 
-<./figures/angles.jpg, id=1, 198.7425pt x 146.04562pt>
+<./figures/angles.jpg, id=4, 198.7425pt x 146.04562pt>
 File: ./figures/angles.jpg Graphic file (type jpg)
+
 <use ./figures/angles.jpg>
-Package pdftex.def Info: ./figures/angles.jpg  used on input line 93.
+Package pdftex.def Info: ./figures/angles.jpg used on input line 95.
 (pdftex.def)             Requested size: 243.26227pt x 178.76591pt.
-
-Underfull \hbox (badness 5893) in paragraph at lines 106--107
-[]\OT1/ptm/m/n/10 Para cono-cer los []angulos \OT1/ptm/m/it/10 yaw, pitch \OT1/
-ptm/m/n/10 y \OT1/ptm/m/it/10 roll \OT1/ptm/m/n/10 del
- []
-
-[1{C:/Users/Gabriel Noya/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no Å in font ptmr7t!
+Missing character: There is no √ in font ptmrc7t!
+Missing character: There is no ì in font ptmrc7t!
+Missing character: There is no √ in font ptmrc7t!
+Missing character: There is no ì in font ptmrc7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≠ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≠ in font ptmr7t!
+Missing character: There is no √ in font ptmri7t!
+Missing character: There is no ≥ in font ptmri7t!
+Missing character: There is no √ in font ptmri7t!
+Missing character: There is no ° in font ptmri7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./figures/angles.jpg>]
-Underfull \hbox (badness 5050) in paragraph at lines 131--132
-[]\OT1/ptm/m/n/10 Se uti-lizar[]an los pa-que-tes \OT1/ptm/b/n/10 rosse-rial \O
-T1/ptm/m/n/10 [[]] y \OT1/ptm/b/n/10 rosse-
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+
+<./figures/diagrama_bloques.png, id=18, 573.14125pt x 512.91624pt>
+File: ./figures/diagrama_bloques.png Graphic file (type png)
+
+<use ./figures/diagrama_bloques.png>
+Package pdftex.def Info: ./figures/diagrama_bloques.png used on input line 124.
+
+(pdftex.def)             Requested size: 243.26227pt x 217.70085pt.
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+
+Overfull \hbox (4.75055pt too wide) in paragraph at lines 140--140
+[]|\OT1/ptm/m/n/10 SEMANAS| 
  []
 
-(root.bbl
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ± in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+[]|\OT1/ptm/m/n/10 Lectura de acelerometro y
+ []
+
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≠ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ± in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ≥ in font ptmr7t!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(./root.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\OT1/ptm/m/n/8 ``Yaw pitch roll im-age.'' $\OT1/pcr/m/n/8 http : / / espygolf
 app . com /
@@ -469,58 +991,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-<<<<<<< HEAD
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[2 <./figures/diagrama_bloques.png>] (./root.aux)
 
+LaTeX Warning: There were multiply-defined labels.
 
-] (./root.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 3408 strings out of 493029
- 48176 string characters out of 6136233
- 112833 words of memory out of 5000000
- 6885 multiletter control sequences out of 15000+600000
- 41109 words of font info for 94 fonts, out of 8000000 for 9000
+ 15149 strings out of 493029
+ 308755 string characters out of 6136233
+ 356978 words of memory out of 5000000
+ 18368 multiletter control sequences out of 15000+600000
+ 43569 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,26p,252b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
-mbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (1 page, 72893 bytes).
+ 62i,10n,65p,822b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root.pdf (2 pages, 122750 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
-=======
-[2
-
-] (root.aux) ) 
-Here is how much of TeX's memory you used:
- 3375 strings out of 492946
- 50207 string characters out of 3123157
- 117924 words of memory out of 3000000
- 7207 multiletter control sequences out of 15000+200000
- 42515 words of font info for 96 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,9n,27p,824b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/base/8r.enc}<C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Gabriel Noya/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Gabriel Noya/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/
-Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/uc
-rr8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
-rw/times/utmb8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/times/utmbi8a.pfb><C:/Users/Gabriel Noya/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Gabriel Noya/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (2 pages, 110876 bytes).
-PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
->>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
+ 51 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

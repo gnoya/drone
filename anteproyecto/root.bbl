@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-\begin{thebibliography}{}
-=======
 \begin{thebibliography}{1}
 
 \bibitem{ypr}
@@ -25,6 +22,5 @@
 \bibitem{rosbridge}
 ``rosbridge\textunderscore suite.'' \url{http://wiki.ros.org/rosbridge_suite}.
 \newblock Revisado el: 2019-02-15.
->>>>>>> 5cc451c751c2bdb22867b47f8089cf5460a56427
 
 \end{thebibliography}
