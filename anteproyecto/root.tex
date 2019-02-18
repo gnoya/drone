@@ -34,6 +34,8 @@
 \usepackage{booktabs}
 \graphicspath{{./figures/}}
 
+\usepackage[utf8]{inputenc}
+
 \usepackage{cite}  % converts [1],[2] to [1,2]
 \makeatletter
 \def\@citex[#1]#2{\leavevmode
@@ -118,13 +120,18 @@ El cuadricóptero cuenta con un receptor de radio frecuencia de cinco canales. A
 El primer paso es instalar un sistema operativo compatible con ROS en el Raspberry Pi. El modelo disponible no es compatible con Ubuntu, por lo que se instalará el sistema operativo Raspbian Stretch \cite{raspbian} y ROS Kinetic. Después de esto, se instalarán los paquetes mencionados en la Sección \ref{paquetes} y se probará que ROS funcione de manera remota al comunicarse con un computador en la misma red. A continuación, se programará la lectura de los sensores en Arduino, se probarán y se publicarán sus datos como tópicos en ROS. Una vez terminada la programación de la lectura de todos los sensores esenciales para el vuelo, se procederá a programar la interfaz gráfica utilizando una aplicación web o una aplicación creada con Node.js y Electron conectada con ROS.
 
 Una vez sea posible monitorear los sensores de una manera segura, se procederá a implementar los controladores PID para controlar los ángulos \textit{yaw, pitch} y \textit{roll}. Luego, se publicarán las salidas de los controladores para poder ser graficadas y ajustadas.
+
 \subsection{DIAGRAMA DE BLOQUES}
+El diagrama de bloques propuesto enseña cómo se comunicarán los datos de los sensores y de dónde son adquiridos. Este diagrama se observa en la Figura \ref{diagrama_bloques}.
+
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.99\columnwidth]{diagrama_bloques.png}
-	\caption{Diagrama de bloques propuesto para el desarrollo delproyecto.}
-	\label{yaw_pitch_roll}
+	\caption{Diagrama de bloques propuesto para el desarrollo del proyecto.}
+	\label{diagrama_bloques}
 \end{figure}
+
+
 \subsection{PAQUETES}
 \label{paquetes}
 Se utilizarán los paquetes \textbf{rosserial} \cite{rosserial} y \textbf{rosserial\textunderscore arduino} \cite{rosserialarduino} para crear un nodo en cada Arduino y que puedan publicar tópicos a través del puerto serial que contengan la información de interés.
@@ -132,34 +139,40 @@ Se utilizarán los paquetes \textbf{rosserial} \cite{rosserial} y \textbf{rosser
 Para comunicar ROS con la aplicación donde se desarrollará la interfaz gráfica, se utilizará el paquete \textbf{rosbridge\textunderscore suite} \cite{rosbridge}, que permite la comunicación entre ROS y otros programa a través de una API JSON.
 
 \section{CRONOGRAMA DE ACTIVIDADES}
-
+El cronograma de actividades muestra semana a semana el progreso planteado del proyecto. Este se puede detallar en la Tabla I.
 
 \begin{center}
- \begin{tabular}{|| m{1.5cm}  m{6cm}||} 
+\begin{table}
+ \label{tabla_actividades} 
+ \caption{Diagrama de actividades propuesto.}
+ \begin{tabular}{| m{1.5cm} | m{6cm}|}
+ 
  \hline
  SEMANAS & ACTIVIDADES \\ [0.5ex] 
  \hline\hline
- \begin{center}1\end{center}  & Instalación y configuración de ros kinetic para Ubuntu 16.04 en PC y raspbian para raspberry PI Zero W \\
+ \begin{center}1\end{center}  & Instalación y configuración de ROS Kinetic para Ubuntu 16.04 en PC y Raspbian para Raspberry Pi Zero W. \\
  \hline
- \begin{center}2\end{center} &  Lectura de acelerometro y giroscopio(MPU6050), lectura de señal RF y pruebas iniciales los motores\\
+ \begin{center}2\end{center} &  Lectura de acelerómetro y giroscopio (MPU6050), lectura de señal RF y pruebas iniciales los motores.\\
  \hline
- \begin{center}3\end{center} & Instalación de entorno y librerías necesarias para la comunicación entre el arduino y raspberry PI mediante rosserial \\
+ \begin{center}3\end{center} & Instalación de entorno y librerías necesarias para la comunicación entre el Arduino y Raspberry Pi a través rosserial. \\
  \hline
- \begin{center}4\end{center} & Implementación de rosserial para comunicación entre Arduino y raspberry PI   \\
+ \begin{center}4\end{center} & Implementación de rosserial para comunicación entre Arduino y Raspberry Pi.   \\
  \hline
- \begin{center}5\end{center} & Lectura y publicación en tópicos de todos los sensores disponibles \\
+ \begin{center}5\end{center} & Lectura de sensores disponibles y publicación en tópicos.\\
  \hline
- \begin{center}6\end{center} & Inicio de pruebas de controladores PID \\
+ \begin{center}6\end{center} & Establecimiento de comunicación inalámbrica entre PC y Raspberry Pi mediante ROS MASTER URI. \\
  \hline
- \begin{center}7\end{center} & Establecimiento de  comunicación inalámbrica entre PC y raspberry mediante ROS MASTER URI \\
+ \begin{center}7\end{center} & Diseño de interfaz gráfica web para el monitoreo de los datos de los sensores. \\
  \hline
- \begin{center}8\end{center} & Diseño de interfaz  gráfica web para el monitoreo de las lecturas de los sensores \\
+  \begin{center}8\end{center} & Implementación de controladores PID. \\
  \hline
- \begin{center}9\end{center} & Optimización de constante de los controladores PID  \\
+ \begin{center}9\end{center} & Optimización de constantes de los controladores PID.  \\
  \hline
- \begin{center}10\end{center} & Realización de pruebas de vuelo en ambiente controlado\\ [1ex] 
+ \begin{center}10\end{center} & Realización de pruebas de vuelo en ambiente controlado.\\ [1ex] 
  \hline
 \end{tabular}
+
+\end{table}
 \end{center}
 
 
