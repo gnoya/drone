@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ROS</title>
+    <link type="text/css" rel="stylesheet" href="libraries/rickshaw/rickshaw.min.css">
+    <script src="libraries/rickshaw/vendor/d3.v3.js"></script>
+    <script src="libraries/rickshaw/vendor/d3.layout.min.js"></script>
+    <script src="libraries/rickshaw/rickshaw.min.js"></script>
+
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+
+    <style>
+        #chart_container {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #chart {
+            position: relative;
+            left: 40px;
+        }
+
+        #y_axis {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+        }
+
+
+        #chart_container2 {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 100px;
+        }
+
+        #chart2 {
+            position: relative;
+            left: 40px;
+        }
+
+        #y_axis2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+        }
+
+
+        #chart_container3 {
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            top: 200px;
+        }
+
+        #chart3 {
+            position: relative;
+            left: 40px;
+        }
+
+        #y_axis3 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart_container">
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+    </div>
+
+    <div id="chart_container2">
+        <div id="y_axis2"></div>
+        <div id="chart2"></div>
+    </div>
+
+    <div id="chart_container3">
+        <div id="y_axis3"></div>
+        <div id="chart3"></div>
+    </div>
+
+</body>
+
+<script src="charts.js" type="text/javascript"></script>
+<script src="ros.js" type="text/javascript"></script>
+
+</html>
