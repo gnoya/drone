@@ -112,21 +112,21 @@ void setup()
     arduino_node.spinOnce();
   }
 
-  if (! nh.getParam("kp", kp, 3){
+  if (! arduino_node.getParam("kp", kp, 3)){
     //default values
     kp[YAW] = 0;
     kp[PITCH] = 0;
     kp[ROLL] = 0; 
   }
 
-  if (! nh.getParam("kd", kd, 3){
+  if (! arduino_node.getParam("kd", kd, 3)){
     //default values
     kd[YAW] = 0;
     kd[PITCH] = 0;
     kd[ROLL] = 0; 
   }
 
-  if (! nh.getParam("ki", ki, 3){
+  if (! arduino_node.getParam("ki", ki, 3)){
     //default values
     ki[YAW] = 0;
     ki[PITCH] = 0;
@@ -260,14 +260,15 @@ void apply_motors()
 
 void ros_publish()
 {
-  /*
+  
   ros_angles.x = angles[ROLL];
   ros_angles.y = angles[PITCH];
   ros_angles.z = angles[YAW];
-  */
+  /*
   ros_angles.x = kp[YAW];
   ros_angles.y = ki[YAW];
   ros_angles.z = kd[YAW];
+  */
   chatter.publish(&ros_angles);
   arduino_node.spinOnce();
 }
