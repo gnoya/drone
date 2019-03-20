@@ -17,7 +17,10 @@ uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
 uint16_t fifoCount;     // count of all bytes currently in FIFO
 uint8_t fifoBuffer[64]; // FIFO storage buffer
 
-
+VectorFloat gravity;    // [x, y, z]            gravity vector
+    Quaternion q;
+    float ypr[3];
+    
 void init_MPU(){
     // join I2C bus (I2Cdev library doesn't do this automatically)
     #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
@@ -60,11 +63,9 @@ void init_MPU(){
     }
 }
 
-void get_MPU_values(float values[]){
+void get_MPU_values(void){
     // orientation/motion vars
-    Quaternion q;           // [w, x, y, z]         quaternion container
-    VectorFloat gravity;    // [x, y, z]            gravity vector
-    float ypr[3];
+    
     
     // wait for MPU interrupt or extra packet(s) available
     while (fifoCount < packetSize) {
@@ -109,9 +110,6 @@ void get_MPU_values(float values[]){
         mpu.dmpGetQuaternion(&q, fifoBuffer);
         mpu.dmpGetGravity(&gravity, &q);
         mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
-        values[0] = ypr[0] * 180/M_PI;
-        values[1] = ypr[1] * 180/M_PI;
-        values[2] = ypr[2] * 180/M_PI;
     }
 }
 
@@ -119,17 +117,17 @@ void setup() {
     Serial.begin(115200);
     while (!Serial);
     init_MPU();
-    delay(12000);
+    // delay(12000);
 }
 
 void loop() {
-    float values[3];
     if (!dmpReady) return;
-    get_MPU_values(values);
-    Serial.print("ypr\t");
-    Serial.print(values[0]);
+    get_MPU_values();
+    
     Serial.print("\t");
-    Serial.print(values[1]);
+    Serial.print(ypr[0] * 180 / M_PI);
     Serial.print("\t");
-    Serial.println(values[2]);
+    Serial.print(ypr[1] * 180 / M_PI);
+    Serial.print("\t");
+    Serial.println(ypr[2] * 180 / M_PI);
 }
