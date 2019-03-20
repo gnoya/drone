@@ -1,7 +1,7 @@
 #include "I2Cdev.h"
 #include "MPU6050_6Axis_MotionApps20.h"
 #include "Wire.h"
-
+#include <Servo.h>
 #include <ros.h>
 #include <geometry_msgs/Vector3.h>
 #include <std_msgs/Int8.h>
@@ -19,6 +19,10 @@ int max_read_rc[4] = {1684, 1684, 1684, 1684};
 int rc_pins[4] = {14, 15, 16, 17};
 
 int esc_pins[4] = {3, 4, 5, 6};
+
+float kp[3] = {4.0, 1.3, 1.3};    // P coefficients in that order : Yaw, Pitch, Roll
+float ki[3] = {0.02, 0.04, 0.04}; // I coefficients in that order : Yaw, Pitch, Roll
+float kd[3] = {0, 18, 18};        // D coefficients in that order : Yaw, Pitch, Roll
 
 /*
 
@@ -102,6 +106,32 @@ void setup()
   second_esc.attach(esc_pins[1]);
   third_esc.attach(esc_pins[2]);
   fourth_esc.attach(esc_pins[3]);
+
+  while (!arduino_node.connected())
+  {
+    arduino_node.spinOnce();
+  }
+
+  if (! nh.getParam("kp", kp, 3){
+    //default values
+    kp[YAW] = 0;
+    kp[PITCH] = 0;
+    kp[ROLL] = 0; 
+  }
+
+  if (! nh.getParam("kd", kd, 3){
+    //default values
+    kd[YAW] = 0;
+    kd[PITCH] = 0;
+    kd[ROLL] = 0; 
+  }
+
+  if (! nh.getParam("ki", ki, 3){
+    //default values
+    ki[YAW] = 0;
+    ki[PITCH] = 0;
+    ki[ROLL] = 0; 
+  }
 }
 
 void loop()
@@ -109,10 +139,12 @@ void loop()
   timer = millis();
 
   measure_mpu();
+  /*
   calculate_setpoints();
   calculate_errors();
   pid_controller();
   apply_motors();
+  */
 
   ros_publish();
   check_delay();
@@ -169,12 +201,9 @@ void calculate_errors()
   errors[ROLL] = setpoints[ROLL] - angles[ROLL];
 }
 
-void pidController()
+void pid_controller()
 {
-  float Kp[3] = {4.0, 1.3, 1.3};    // P coefficients in that order : Yaw, Pitch, Roll
-  float Ki[3] = {0.02, 0.04, 0.04}; // I coefficients in that order : Yaw, Pitch, Roll
-  float Kd[3] = {0, 18, 18};        // D coefficients in that order : Yaw, Pitch, Roll
-  float delta_err[3] = {0, 0, 0};   // Error deltas in that order   : Yaw, Pitch, Roll
+  float delta_err[3] = {0, 0, 0}; // Error deltas in that order   : Yaw, Pitch, Roll
   float yaw_pid = 0;
   float pitch_pid = 0;
   float roll_pid = 0;
@@ -204,9 +233,9 @@ void pidController()
     previous_error[ROLL] = errors[ROLL];
 
     // PID = e.Kp + ∫e.Ki + Δe.Kd
-    yaw_pid = (errors[YAW] * Kp[YAW]) + (error_sum[YAW] * Ki[YAW]) + (delta_err[YAW] * Kd[YAW]);
-    pitch_pid = (errors[PITCH] * Kp[PITCH]) + (error_sum[PITCH] * Ki[PITCH]) + (delta_err[PITCH] * Kd[PITCH]);
-    roll_pid = (errors[ROLL] * Kp[ROLL]) + (error_sum[ROLL] * Ki[ROLL]) + (delta_err[ROLL] * Kd[ROLL]);
+    yaw_pid = (errors[YAW] * kp[YAW]) + (error_sum[YAW] * ki[YAW]) + (delta_err[YAW] * kd[YAW]);
+    pitch_pid = (errors[PITCH] * kp[PITCH]) + (error_sum[PITCH] * ki[PITCH]) + (delta_err[PITCH] * kd[PITCH]);
+    roll_pid = (errors[ROLL] * kp[ROLL]) + (error_sum[ROLL] * ki[ROLL]) + (delta_err[ROLL] * kd[ROLL]);
 
     // Calculate pulse duration for each ESC
     pulse_length_esc1 = setpoints[THROTTLE] + roll_pid + pitch_pid - yaw_pid;
@@ -221,7 +250,7 @@ void pidController()
   pulse_length_esc4 = minMax(pulse_length_esc4, 1100, 2000);
 }
 
-void applyMotorSpeed()
+void apply_motors()
 {
   first_esc.writeMicroseconds(pulse_length_esc1);
   second_esc.writeMicroseconds(pulse_length_esc2);
@@ -231,9 +260,14 @@ void applyMotorSpeed()
 
 void ros_publish()
 {
+  /*
   ros_angles.x = angles[ROLL];
   ros_angles.y = angles[PITCH];
   ros_angles.z = angles[YAW];
+  */
+  ros_angles.x = kp[YAW];
+  ros_angles.y = ki[YAW];
+  ros_angles.z = kd[YAW];
   chatter.publish(&ros_angles);
   arduino_node.spinOnce();
 }
