@@ -3,22 +3,21 @@
 #include "Wire.h"
 #include <Servo.h>
 #include <ros.h>
-#include <geometry_msgs/Vector3.h>
-#include <std_msgs/Int8.h>
-
+#include <drone_control/imu_values.h>
+#include <drone_control/rc_controller.h>
 #define YAW 0
 #define PITCH 1
 #define ROLL 2
 #define THROTTLE 3
 
-int hertz = 200;
+int hertz = 100;
 int baudrate = 115200;
 
-int min_read_rc[4] = {986, 986, 986, 986};
-int max_read_rc[4] = {1684, 1684, 1684, 1684};
+int min_read_rc[4] = {996, 1048, 982, 983};
+int max_read_rc[4] = {1837, 1952, 1824, 1837};
 int rc_pins[4] = {14, 15, 16, 17};
 
-int esc_pins[4] = {3, 4, 5, 6};
+int esc_pins[4] = {8, 9, 10, 11};
 
 float kp[3] = {4.0, 1.3, 1.3};    // P coefficients in that order : Yaw, Pitch, Roll
 float ki[3] = {0.02, 0.04, 0.04}; // I coefficients in that order : Yaw, Pitch, Roll
@@ -43,11 +42,13 @@ float kd[3] = {0, 18, 18};        // D coefficients in that order : Yaw, Pitch, 
 volatile uint16_t rc_values[4];
 uint16_t rc_timers[4];
 
-float angles[3];
+float angles[3] = {0};
 float setpoints[4];
 float errors[3];
 float error_sum[3] = {0, 0, 0};
 float previous_error[3] = {0, 0, 0};
+float last_yaw = 180;
+float yaw_velocity = 0;
 
 unsigned long pulse_length_esc1 = 1000,
               pulse_length_esc2 = 1000,
@@ -64,11 +65,18 @@ uint8_t fifoBuffer[64];
 unsigned long timer = 0;
 float timeStep = 1 / (float)hertz;
 
-geometry_msgs::Vector3 ros_angles;
-std_msgs::Int8 pwm;
+drone_control::imu_values ros_angles;
+drone_control::imu_values imu_errors;
+
+drone_control::rc_controller rc_setpoints;
+drone_control::rc_controller pid_values;
+
 ros::NodeHandle arduino_node;
 ros::Publisher chatter("imu", &ros_angles);
-ros::Publisher pub_pwm("pwm", &pwm);
+ros::Publisher pub_setpoints("rc_setpoints", &rc_setpoints);
+
+ros::Publisher pub_errors("imu_errors", &imu_errors);
+ros::Publisher pub_pid("pid_values", &pid_values);
 
 Servo first_esc, second_esc, third_esc, fourth_esc;
 
@@ -89,8 +97,12 @@ void setup()
 
   arduino_node.getHardware()->setBaud(baudrate);
   arduino_node.initNode();
+  
   arduino_node.advertise(chatter);
-  arduino_node.advertise(pub_pwm);
+  arduino_node.advertise(pub_setpoints);
+  arduino_node.advertise(pub_pid); 
+  
+  arduino_node.advertise(pub_errors);
 
   pinMode(rc_pins[YAW], INPUT);
   pinMode(rc_pins[PITCH], INPUT);
@@ -98,14 +110,20 @@ void setup()
   pinMode(rc_pins[THROTTLE], INPUT);
 
   attachInterrupt(rc_pins[YAW], yaw_handler, CHANGE);
-  attachInterrupt(rc_pins[PITCH], roll_handler, CHANGE);
-  attachInterrupt(rc_pins[ROLL], pitch_handler, CHANGE);
+  attachInterrupt(rc_pins[PITCH], pitch_handler, CHANGE);
+  attachInterrupt(rc_pins[ROLL], roll_handler, CHANGE);
   attachInterrupt(rc_pins[THROTTLE], throttle_handler, CHANGE);
 
   first_esc.attach(esc_pins[0]);
   second_esc.attach(esc_pins[1]);
   third_esc.attach(esc_pins[2]);
   fourth_esc.attach(esc_pins[3]);
+  
+  first_esc.writeMicroseconds(1000);
+  second_esc.writeMicroseconds(1000);
+  third_esc.writeMicroseconds(1000);
+  fourth_esc.writeMicroseconds(1000);
+
 
   while (!arduino_node.connected())
   {
@@ -138,19 +156,36 @@ void loop()
 {
   timer = millis();
 
-  measure_mpu();
-  /*
-  calculate_setpoints();
-  calculate_errors();
-  pid_controller();
-  apply_motors();
-  */
+  if(measure_mpu());
+  {
+    calculate_setpoints();
+    calculate_errors();
+    pid_controller();
+    apply_motors();
+    ros_publish();
+  }
+  
+  rc_setpoints.set_throttle = rc_values[THROTTLE];
+  rc_setpoints.set_yaw = rc_values[YAW];
+  rc_setpoints.set_pitch = rc_values[PITCH];
+  rc_setpoints.set_roll = rc_values[ROLL];
 
-  ros_publish();
+
+  pid_values.set_yaw = (float)pulse_length_esc1;
+  pid_values.set_pitch = (float)pulse_length_esc2;
+  pid_values.set_roll = (float)pulse_length_esc3;
+  pid_values.set_throttle = (float)pulse_length_esc4;
+
+  pub_setpoints.publish(&rc_setpoints);
+  pub_pid.publish(&pid_values);
+  
+  
+  arduino_node.spinOnce();
+  
   check_delay();
 }
 
-void measure_mpu()
+bool measure_mpu()
 {
   fifoCount = mpu.getFIFOCount();
 
@@ -177,26 +212,32 @@ void measure_mpu()
         mpu.dmpGetQuaternion(&q, fifoBuffer);
         mpu.dmpGetGravity(&gravity, &q);
         mpu.dmpGetYawPitchRoll(angles, &q, &gravity);
-
-        angles[YAW] = angles[YAW] * 180 / PI;
+        
+        float new_yaw = angles[YAW] * 180 / PI + 180;
+        
         angles[PITCH] = angles[PITCH] * 180 / PI;
         angles[ROLL] = angles[ROLL] * 180 / PI;
+        angles[YAW] = new_yaw;
+        yaw_velocity =  1000 * (new_yaw - last_yaw) / (millis() - timer);
+        last_yaw = new_yaw;
+        return (true);
       }
     }
   }
+  return (false);
 }
 
 void calculate_setpoints()
 {
-  setpoints[YAW] = map(rc_values[YAW], 1000, 2000, -180, 180);
+  setpoints[YAW] = map(rc_values[YAW], 1000, 2000, 90, -90);
   setpoints[PITCH] = map(rc_values[PITCH], 1000, 2000, 33, -33);
-  setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, -33, 33);
+  setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, 33, -33);
   setpoints[THROTTLE] = map(rc_values[THROTTLE], 1000, 2000, 1000, 1800);
 }
 
 void calculate_errors()
 {
-  errors[YAW] = setpoints[YAW] - angles[YAW];
+  errors[YAW] = setpoints[YAW] - yaw_velocity;
   errors[PITCH] = setpoints[PITCH] - angles[PITCH];
   errors[ROLL] = setpoints[ROLL] - angles[ROLL];
 }
@@ -215,7 +256,7 @@ void pid_controller()
   pulse_length_esc4 = setpoints[THROTTLE];
 
   // Do not calculate anything if throttle is 0
-  if (setpoints[THROTTLE] >= 1012)
+  if (setpoints[THROTTLE] >= 1030)
   {
     // Calculate sum of errors : Integral coefficients
     error_sum[YAW] += errors[YAW];
@@ -242,12 +283,12 @@ void pid_controller()
     pulse_length_esc2 = setpoints[THROTTLE] - roll_pid + pitch_pid + yaw_pid;
     pulse_length_esc3 = setpoints[THROTTLE] + roll_pid - pitch_pid + yaw_pid;
     pulse_length_esc4 = setpoints[THROTTLE] - roll_pid - pitch_pid - yaw_pid;
-  }
 
-  pulse_length_esc1 = minMax(pulse_length_esc1, 1100, 2000);
-  pulse_length_esc2 = minMax(pulse_length_esc2, 1100, 2000);
-  pulse_length_esc3 = minMax(pulse_length_esc3, 1100, 2000);
-  pulse_length_esc4 = minMax(pulse_length_esc4, 1100, 2000);
+    pulse_length_esc1 = minMax(pulse_length_esc1, 1100, 1800);
+    pulse_length_esc2 = minMax(pulse_length_esc2, 1100, 1800);
+    pulse_length_esc3 = minMax(pulse_length_esc3, 1100, 1800);
+    pulse_length_esc4 = minMax(pulse_length_esc4, 1100, 1800);
+  }
 }
 
 void apply_motors()
@@ -260,17 +301,17 @@ void apply_motors()
 
 void ros_publish()
 {
+  ros_angles.yaw = yaw_velocity;
+  ros_angles.pitch = angles[PITCH];
+  ros_angles.roll = angles[ROLL];
+
+  imu_errors.yaw = errors[YAW];
+  imu_errors.pitch = errors[PITCH];
+  imu_errors.roll = errors[ROLL];
   
-  ros_angles.x = angles[ROLL];
-  ros_angles.y = angles[PITCH];
-  ros_angles.z = angles[YAW];
-  /*
-  ros_angles.x = kp[YAW];
-  ros_angles.y = ki[YAW];
-  ros_angles.z = kd[YAW];
-  */
+  pub_errors.publish(&imu_errors);
   chatter.publish(&ros_angles);
-  arduino_node.spinOnce();
+  
 }
 
 void check_delay()
@@ -290,13 +331,17 @@ void rc_timing(int channel)
   }
   else
   {
-    rc_values[channel] = rc_map(rc_timers[channel], min_read_rc[channel], max_read_rc[channel]);
+    uint16_t rc_value = rc_map(rc_timers[channel], min_read_rc[channel], max_read_rc[channel]);
+    if(rc_value > 1420 && rc_value < 1580) rc_value = 1500;
+    rc_values[channel] = rc_value;
   }
 }
 
 uint16_t rc_map(uint16_t timer, int min, int max)
 {
   uint16_t value = (uint16_t)(micros() - timer);
+  //return value;
+  
   if (value < min)
     value = min;
   else if (value > max)
