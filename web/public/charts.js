@@ -24,50 +24,58 @@ for (var i = 0; i < hertz * graphSeconds; i++) {
 
 var graphs = []
 var angles = [yaw, pitch, roll]
+var angle_setpoint = [yawSetpoint, pitchSetpoint, rollSetpoint]
+
 var y_axiss = ['y_axis', 'y_axis2', 'y_axis3']
 var charts = ['chart', 'chart2', 'chart3']
+var legends = ['legend', 'legend2', 'legend3']
+var names = ['Yaw', 'Pitch', 'Roll']
+var tickValues = [[-90, 0, 90], [-45, 0, 45], [-45, 0, 45]]
 
 for (var i = 0; i < 3; i++) {
-    let tickValues = [-45, 0, 45]
+    /*
+    let tickValues = 
     min = tickValues[0]
     max = tickValues[tickValues.length - 1]
     if (i == 0) {
-        data_ = yawSetpoint
         tickValues = [-90, 0, 90]
         min = tickValues[0]
         max = tickValues[tickValues.length - 1]
-    } else if (i == 1) {
-        data_ = pitchSetpoint
-    } else if (i == 2) {
-        data_ = rollSetpoint
     }
-
+*/
     var graph = new Rickshaw.Graph({
         element: document.getElementById(charts[i]),
         width: 800,
         height: 200,
         renderer: 'line',
         interpolation: 'basis',
-        min: min,
-        max: max,
+        min: tickValues[i][0],
+        max: tickValues[i][tickValues[i].length - 1],
         series: [{
+            name: names[i],
             color: 'black',
             data: angles[i]
         },
         {
+            name: 'Setpoint',
             color: 'red',
-            data: data_
+            data: angle_setpoint[i]
         }
         ]
     });
+
     var x_axis = new Rickshaw.Graph.Axis.Time({ graph: graph });
     var y_axis = new Rickshaw.Graph.Axis.Y({
         graph: graph,
         orientation: 'left',
-        tickValues: tickValues,
+        tickValues: tickValues[i],
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
         element: document.getElementById(y_axiss[i]),
     });
+    /*var legend = new Rickshaw.Graph.Legend({
+        element: document.getElementById(legend[i]),
+        graph: graph
+    });*/
 
     graphs.push(graph)
     graph.render()
