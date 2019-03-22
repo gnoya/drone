@@ -2,6 +2,15 @@ const hertz = 200
 const graphSeconds = 15
 const refreshRateHz = 10
 
+var offsetHeight = document.getElementById('chart').offsetHeight;
+var offsetWidth = document.getElementById('chart').offsetWidth;
+
+
+var size = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+}
+
 var yaw = []
 var pitch = []
 var roll = []
@@ -30,27 +39,18 @@ var y_axiss = ['y_axis', 'y_axis2', 'y_axis3']
 var charts = ['chart', 'chart2', 'chart3']
 var legends = ['legend', 'legend2', 'legend3']
 var names = ['Yaw', 'Pitch', 'Roll']
-var tickValues = [[-90, 0, 90], [-45, 0, 45], [-45, 0, 45]]
+var tickValues = [[-120, -90, -60, -30, 0, 30, 60, 90, 120], [-60, -40, -20, 0, 20, 40, 60], [-60, -40, -20, 0, 20, 40, 60]]
 
 for (var i = 0; i < 3; i++) {
-    /*
-    let tickValues = 
-    min = tickValues[0]
-    max = tickValues[tickValues.length - 1]
-    if (i == 0) {
-        tickValues = [-90, 0, 90]
-        min = tickValues[0]
-        max = tickValues[tickValues.length - 1]
-    }
-*/
     var graph = new Rickshaw.Graph({
         element: document.getElementById(charts[i]),
-        width: 800,
-        height: 200,
+        width: offsetWidth * 0.90,
+        height: offsetHeight * 0.90,
         renderer: 'line',
         interpolation: 'basis',
         min: tickValues[i][0],
         max: tickValues[i][tickValues[i].length - 1],
+        padding: { top: 0.06, bottom: 0.02 },
         series: [{
             name: names[i],
             color: 'black',
@@ -65,17 +65,16 @@ for (var i = 0; i < 3; i++) {
     });
 
     var x_axis = new Rickshaw.Graph.Axis.Time({ graph: graph });
+    x_axis.render();
     var y_axis = new Rickshaw.Graph.Axis.Y({
         graph: graph,
         orientation: 'left',
         tickValues: tickValues[i],
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
         element: document.getElementById(y_axiss[i]),
+
     });
-    /*var legend = new Rickshaw.Graph.Legend({
-        element: document.getElementById(legend[i]),
-        graph: graph
-    });*/
+    y_axis.render();
 
     graphs.push(graph)
     graph.render()

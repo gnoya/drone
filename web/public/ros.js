@@ -1,10 +1,3 @@
-/*
-TODO:
-Cambiar el eje X, no se ve bien agarrar directamente los ms (creo yo).
-Ajustar x,y,z a roll, pitch, yaw, respectivamente.
-Mejorar el aspecto de la interfaz.
-*/
-
 var ros = new ROSLIB.Ros({
     url: 'ws://192.168.1.100:9090'
 });
