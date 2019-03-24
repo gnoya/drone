@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drone</title>
+
+    <link type="text/css" rel="stylesheet" href="libraries/rickshaw/rickshaw.min.css">
+    <link type="text/css" rel="stylesheet" href="src/css/drone.css" />
+    <script src="libraries/rickshaw/vendor/d3.v3.js"></script>
+    <script src="libraries/rickshaw/vendor/d3.layout.min.js"></script>
+    <script src="libraries/rickshaw/rickshaw.min.js"></script>
+
+    <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="firstColumn">
+            <p class="titles">Yaw</p>
+            <div id="chart_container" class="chart_container">
+                <div id="chart" class="chart"></div>
+                <div id="y_axis" class="y_axis"></div>
+            </div>
+
+            <p class="titles">Pitch</p>
+            <div id="chart_container2" class="chart_container">
+                <div id="chart2" class="chart"></div>
+                <div id="y_axis2" class="y_axis"></div>
+            </div>
+
+            <p class="titles">Roll</p>
+            <div id="chart_container3" class="chart_container">
+                <div id="chart3" class="chart"></div>
+                <div id="y_axis3" class="y_axis"></div>
+            </div>
+        </div>
+
+        <div class="secondColumn">
+            <div class="drone">
+                <p class="motor1">
+                    <span id="motorFrontLeft">0</span> %
+                </p>
+                <p class="motor2">
+                    <span id="motorFrontRight">0</span> %
+                </p>
+                <p class="motor3">
+                    <span id="motorBackLeft">0</span> %
+                </p>
+                <p class="motor4">
+                    <span id="motorBackRight">0</span> %
+                </p>
+            </div>
+            <div class="camera">
+            </div>
+        </div>
+
+        <div class="thirdColumn">
+            <div>
+                <p class="titles">Errors</p>
+                <p class="text">Yaw:
+                    <span id="errorYaw">0.00</span> degrees/s
+                </p>
+                <p class="text">Pitch:
+                    <span id="pitchYaw">0.00</span> degrees
+                </p>
+                <p class="text">Roll:
+                    <span id="rollYaw">0.00</span> degrees
+                </p>
+            </div>
+            <div>
+                <p class="titles">PID Constants</p>
+                <p class="text" id="kp">Kp:
+                    <span id="kpYaw" onclick="updatekpYaw()">0.00</span> |
+                    <span id="kpPitch" onclick="updatekpPitch()">0.00</span> |
+                    <span id="kpRoll" onclick="updatekpRoll()">0.00</span>
+                </p>
+                <p class="text" id="kd">Kd:
+                    <span id="kdYaw" onclick="updatekdYaw()">0.00</span> |
+                    <span id="kdPitch" onclick="updatekdPitch()">0.00</span> |
+                    <span id="kdRoll" onclick="updatekdRoll()">0.00</span>
+                </p>
+                <p class="text" id="ki">Ki:
+                    <span id="kiYaw" onclick="updatekiYaw()">0.00</span> |
+                    <span id="kiPitch" onclick="updatekiPitch()">0.00</span> |
+                    <span id="kiRoll" onclick="updatekiRoll()">0.00</span>
+                </p>
+            </div>
+
+
+            <div>
+                <p class="text">Motors</p>
+                <label class="switch">
+                    <input type="checkbox" id="stopMotors" onclick="motorSwitchFunction()" checked="true">
+                    <span class="slider round"></span>
+                </label>
+                <!-- <button type="button" class='button' ">Emergency</button> -->
+            </div>
+
+            <div>
+                <p class="text">Reboot</p>
+                <label class="switch">
+                    <input type="checkbox" id="rebootDrone" onclick="rebootDrone()" checked="true">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div>
+                <p class="titles">Setpoints</p>
+                <p class="text">Throttle:
+                    <span id="setpointThrottle">0</span>%
+                </p>
+                <p class="text">Yaw:
+                    <span id="setpointYaw">0</span> degrees/s
+                </p>
+
+                <p class="text">Pitch:
+                    <span id="setpointPitch">0</span> degrees
+                </p>
+                <p class="text">Roll:
+                    <span id="setpointRoll">0</span> degrees
+                </p>
+            </div>
+            <div>
+                <p class="titles">RC Values</p>
+                <p class="text">Throttle:
+                    <span id="rcThrottle">0</span> μs
+                </p>
+                <p class="text">Yaw:
+                    <span id="rcYaw">0</span> μs
+                </p>
+                <p class="text">Pitch:
+                    <span id="rcPitch">0</span> μs
+                </p>
+                <p class="text">Roll:
+                    <span id="rcRoll">0</span> μs
+                </p>
+            </div>
+        </div>
+</body>
+
+
+<script src="src/js/charts.js" type="text/javascript"></script>
+<script src="src/js/ros.js" type="text/javascript"></script>
+<script src="src/js/pidFunctions.js" type="text/javascript"></script>
+
+
+</html>

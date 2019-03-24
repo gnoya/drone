@@ -1,0 +1,244 @@
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.firstColumn {
+    display: grid;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    min-height: 750px;
+}
+
+.secondColumn {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    min-height: 750px;
+}
+
+.thirdColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 15% 1fr;
+    align-items: center;
+    justify-items: center;
+    min-height: 750px;
+}
+
+.customBox {
+    display: grid;
+    grid-row: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.chart_container {
+    display: inline-block;
+    top: -18%;
+    position: relative;
+    width: 85%;
+    height: 95%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style: solid;
+    border-width: 4px;
+    background: white;
+}
+
+.chart {
+    top: 4%;
+    position: relative;
+    width: 90%;
+    height: 95%;
+    float: right;
+}
+
+.y_axis {
+    position: relative;
+    top: 4%;
+    height: 100%;
+    width: 40px;
+    vertical-align: center;
+    bottom: 0;
+    left: 1.6%;
+}
+
+
+.titles {
+    top: -7%;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.text {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.drone {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/drone3.png");
+}
+
+.camera {
+    position: relative;
+    /* border-color: white; */
+    border-style: solid;
+    border-width: 4px;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    
+    background-image: url("../img/camera2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+}
+
+.motor1 {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    top: 0;
+    left: 8%;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.motor2 {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    top: 0;
+    right: 8%;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.motor3 {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    bottom: 0;
+    left: 8%;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.motor4 {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    bottom: 0;
+    right: 8%;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url("../img/background2.png");
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2faad8;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2faad8;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(46px);
+    -ms-transform: translateX(46px);
+    transform: translateX(46px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
