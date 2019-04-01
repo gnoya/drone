@@ -127,14 +127,14 @@ void setup()
   
   //stop_all();
 
-  while (!arduino_node.connected())
-  {
+  //while (!arduino_node.connected())
+  //{
     first_esc.writeMicroseconds(rc_values[THROTTLE]);
     second_esc.writeMicroseconds(rc_values[THROTTLE]);
     third_esc.writeMicroseconds(rc_values[THROTTLE]);
     fourth_esc.writeMicroseconds(rc_values[THROTTLE]);
-    arduino_node.spinOnce();
-  }
+    //arduino_node.spinOnce();
+  //}
 
   get_ros_params();
   init_mpu();
