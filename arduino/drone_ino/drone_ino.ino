@@ -127,14 +127,14 @@ void setup()
   
   //stop_all();
 
-  //while (!arduino_node.connected())
-  //{
+  while (!arduino_node.connected())
+  {
     first_esc.writeMicroseconds(rc_values[THROTTLE]);
     second_esc.writeMicroseconds(rc_values[THROTTLE]);
     third_esc.writeMicroseconds(rc_values[THROTTLE]);
     fourth_esc.writeMicroseconds(rc_values[THROTTLE]);
-    //arduino_node.spinOnce();
-  //}
+    arduino_node.spinOnce();
+  }
 
   get_ros_params();
   init_mpu();
@@ -193,7 +193,7 @@ bool measure_mpu()
         
         float new_yaw = angles[YAW] * 180 / PI + 180;
         
-        angles[PITCH] = angles[PITCH] * 180 / PI;
+        angles[PITCH] = - angles[PITCH] * 180 / PI;
         angles[ROLL] = angles[ROLL] * 180 / PI;
         angles[YAW] = new_yaw;
         yaw_velocity =  1000 * (new_yaw - last_yaw) / (millis() - yaw_timer);
@@ -209,12 +209,18 @@ bool measure_mpu()
 void calculate_setpoints()
 {
   if(rc_values[YAW] == 0) setpoints[YAW] = 0;
-  else setpoints[YAW] = map(rc_values[YAW], 1000, 2000, 90, -90);
+  else if(rc_values[YAW] == 1500) setpoints[YAW] = 0;
+  else setpoints[YAW] = map(rc_values[YAW], 1000, 2000, 90, -90) - 1;
+  
   if(rc_values[PITCH] == 0) setpoints[PITCH] = 0;
-  else setpoints[PITCH] = map(rc_values[PITCH], 1000, 2000, 33, -33);
+  else if(rc_values[PITCH] == 1500) setpoints[PITCH] = 0;
+  else setpoints[PITCH] = map(rc_values[PITCH], 1000, 2000, 33, -33) - 1;
+  
   if(rc_values[ROLL] == 0) setpoints[ROLL] = 0;
-  else setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, 33, -33);
-  if(rc_values[THROTTLE] == 0) setpoints[THROTTLE] = 1000;
+  else if(rc_values[ROLL] == 1500) setpoints[ROLL] = 0;
+  else setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, 33, -33) - 1;
+  
+  if(rc_values[THROTTLE] <= 1000) setpoints[THROTTLE] = 1000;
   else setpoints[THROTTLE] = map(rc_values[THROTTLE], 1000, 2000, 1000, 1800);
 }
 
@@ -393,7 +399,7 @@ void rc_timing(int channel)
   else
   {
     uint16_t rc_value = rc_map(rc_timers[channel], min_read_rc[channel], max_read_rc[channel]);
-    if(rc_value > 1420 && rc_value < 1580) rc_value = 1500;
+    if(rc_value > 1460 && rc_value < 1540) rc_value = 1500;
     rc_values[channel] = rc_value;
   }
 }
