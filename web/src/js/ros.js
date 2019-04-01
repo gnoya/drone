@@ -21,7 +21,7 @@ var motorSwitch = document.getElementById("stopMotors")
 var rebootSwitch = document.getElementById("rebootDrone")
 
 var ros = new ROSLIB.Ros({
-    url: 'ws://192.168.0.101:9090'
+    url: 'ws://192.168.1.125:9090'
 })
 
 var imu = new ROSLIB.Topic({
@@ -44,7 +44,7 @@ var errors = new ROSLIB.Topic({
 
 var rcValues = new ROSLIB.Topic({
     ros: ros,
-    name: '/rcValues',
+    name: '/rc_values',
     messageType: 'drone/RCValues'
 })
 
@@ -79,8 +79,8 @@ function drawIMU(message) {
         yaw.shift()
     }
     yaw.push({ x: graphTimer, y: message.yaw })
-    pitch.push({ x: graphTimer, y: message.pitch })
-    roll.push({ x: graphTimer, y: message.roll })
+    pitch.push({ x: graphTimer, y: message.roll })
+    roll.push({ x: graphTimer, y: message.pitch })
     graphTimer += 1 / hertz
 }
 
@@ -147,7 +147,7 @@ window.onload = function () {
         }
     }, 1 / refreshRateHz * 1000)
 
-    //setInterval(drawPID(), 5000)
+    setInterval(drawPID(), 5000)
 }
 
 function map(n, start1, stop1, start2, stop2) {
