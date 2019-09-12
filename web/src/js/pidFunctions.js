@@ -38,9 +38,9 @@ function drawPID() {
     });
 
     kiConstants.get(function (value) {
-        kiYaw.innerHTML = value[0].toFixed(2)
-        kiPitch.innerHTML = value[1].toFixed(2)
-        kiRoll.innerHTML = value[2].toFixed(2)
+        kiYaw.innerHTML = value[0].toFixed(3)
+        kiPitch.innerHTML = value[1].toFixed(3)
+        kiRoll.innerHTML = value[2].toFixed(3)
     });
 }
 
@@ -97,7 +97,7 @@ function updatekdRoll() {
 function updatekiYaw() {
     var constant = parseFloat(prompt("Ki Yaw"));
     if (!isNaN(constant) && constant >= 0) {
-        kiYaw.innerHTML = constant.toFixed(2)
+        kiYaw.innerHTML = constant.toFixed(3)
         updatePIDParams("ki")
     }
 }
@@ -105,7 +105,7 @@ function updatekiYaw() {
 function updatekiPitch() {
     var constant = parseFloat(prompt("Ki Pitch"));
     if (!isNaN(constant) && constant >= 0) {
-        kiPitch.innerHTML = constant.toFixed(2)
+        kiPitch.innerHTML = constant.toFixed(3)
         updatePIDParams("ki")
     }
 }
@@ -113,7 +113,7 @@ function updatekiPitch() {
 function updatekiRoll() {
     var constant = parseFloat(prompt("Ki Roll"));
     if (!isNaN(constant) && constant >= 0) {
-        kiRoll.innerHTML = constant.toFixed(2)
+        kiRoll.innerHTML = constant.toFixed(3)
         updatePIDParams("ki")
     }
 }

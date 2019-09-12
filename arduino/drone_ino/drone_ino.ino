@@ -17,9 +17,9 @@
 
 int hertz = 100;
 int baudrate = 115200;
-
-int min_read_rc[4] = {996, 1048, 982, 983};
-int max_read_rc[4] = {1837, 1952, 1824, 1837};
+// yaw, pitch, roll, throttle
+int min_read_rc[4] = {1260, 1235, 1238, 984};
+int max_read_rc[4] = {1700, 1670, 1662, 1630};
 int rc_pins[4] = {14, 15, 16, 17};
 
 int esc_pins[4] = {8, 9, 10, 11};
@@ -36,7 +36,8 @@ float kd[3];          // D coefficients in that order : Yaw, Pitch, Roll
     X       \|
     / \       +----→ y
   (3) (4)
-
+  
+  Front: Blue
   Motor 1 : front left - clockwise
   Motor 2 : front right - counter-clockwise
   Motor 3 : rear left - clockwise
@@ -129,10 +130,18 @@ void setup()
 
   while (!arduino_node.connected())
   {
+    
     first_esc.writeMicroseconds(rc_values[THROTTLE]);
     second_esc.writeMicroseconds(rc_values[THROTTLE]);
     third_esc.writeMicroseconds(rc_values[THROTTLE]);
     fourth_esc.writeMicroseconds(rc_values[THROTTLE]);
+    
+    /*
+    first_esc.writeMicroseconds(1000);
+    second_esc.writeMicroseconds(1000);
+    third_esc.writeMicroseconds(1000);
+    fourth_esc.writeMicroseconds(1000);
+    */
     arduino_node.spinOnce();
   }
 
@@ -150,9 +159,11 @@ void loop()
     calculate_setpoints();
     calculate_errors();
     pid_controller();
+    
     if(enable_motors) {
       apply_motors();
     }
+    
     imu_publish();
   }
   
@@ -192,10 +203,10 @@ bool measure_mpu()
         mpu.dmpGetYawPitchRoll(angles, &q, &gravity);
         
         float new_yaw = angles[YAW] * 180 / PI + 180;
-        
-        angles[PITCH] = - angles[PITCH] * 180 / PI;
-        angles[ROLL] = angles[ROLL] * 180 / PI;
-        angles[YAW] = new_yaw;
+        float temp = angles[PITCH];
+        angles[PITCH] = angles[ROLL] * 180 / PI + 1.3;
+        angles[ROLL] = temp * 180 / PI + 2.9;
+        angles[YAW] = 0.6 * angles[YAW] + 0.4 * new_yaw;
         yaw_velocity =  1000 * (new_yaw - last_yaw) / (millis() - yaw_timer);
         yaw_timer = millis();
         last_yaw = new_yaw;     
@@ -210,15 +221,15 @@ void calculate_setpoints()
 {
   if(rc_values[YAW] == 0) setpoints[YAW] = 0;
   else if(rc_values[YAW] == 1500) setpoints[YAW] = 0;
-  else setpoints[YAW] = map(rc_values[YAW], 1000, 2000, 90, -90) - 1;
+  else setpoints[YAW] = map(rc_values[YAW], 1000, 2000, 10, -10);
   
   if(rc_values[PITCH] == 0) setpoints[PITCH] = 0;
   else if(rc_values[PITCH] == 1500) setpoints[PITCH] = 0;
-  else setpoints[PITCH] = map(rc_values[PITCH], 1000, 2000, 33, -33) - 1;
+  else setpoints[PITCH] = map(rc_values[PITCH], 1000, 2000, -12, 12);
   
   if(rc_values[ROLL] == 0) setpoints[ROLL] = 0;
   else if(rc_values[ROLL] == 1500) setpoints[ROLL] = 0;
-  else setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, 33, -33) - 1;
+  else setpoints[ROLL] = map(rc_values[ROLL], 1000, 2000, 12, -12);
   
   if(rc_values[THROTTLE] <= 1000) setpoints[THROTTLE] = 1000;
   else setpoints[THROTTLE] = map(rc_values[THROTTLE], 1000, 2000, 1000, 1800);
@@ -268,15 +279,18 @@ void pid_controller()
     roll_pid = (errors[ROLL] * kp[ROLL]) + (error_sum[ROLL] * ki[ROLL]) + (delta_err[ROLL] * kd[ROLL]);
 
     // Calculate pulse duration for each ESC
-    pulse_length_esc1 = setpoints[THROTTLE] + roll_pid + pitch_pid - yaw_pid;
-    pulse_length_esc2 = setpoints[THROTTLE] - roll_pid + pitch_pid + yaw_pid;
-    pulse_length_esc3 = setpoints[THROTTLE] + roll_pid - pitch_pid + yaw_pid;
-    pulse_length_esc4 = setpoints[THROTTLE] - roll_pid - pitch_pid - yaw_pid;
+    pulse_length_esc1 = setpoints[THROTTLE] - roll_pid + pitch_pid - yaw_pid;
+    pulse_length_esc2 = setpoints[THROTTLE] + roll_pid + pitch_pid + yaw_pid;
+    pulse_length_esc3 = setpoints[THROTTLE] - roll_pid - pitch_pid + yaw_pid;
+    pulse_length_esc4 = setpoints[THROTTLE] + roll_pid - pitch_pid - yaw_pid;
 
     pulse_length_esc1 = minMax(pulse_length_esc1, 1100, 1800);
     pulse_length_esc2 = minMax(pulse_length_esc2, 1100, 1800);
     pulse_length_esc3 = minMax(pulse_length_esc3, 1100, 1800);
     pulse_length_esc4 = minMax(pulse_length_esc4, 1100, 1800);
+  }
+  else{
+    reset_pid();
   }
 }
 
@@ -407,6 +421,7 @@ void rc_timing(int channel)
 uint16_t rc_map(uint16_t timer, int min, int max)
 {
   uint16_t value = (uint16_t)(micros() - timer);
+  //
   //return value;
   
   if (value < min)

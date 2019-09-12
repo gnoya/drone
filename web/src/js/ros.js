@@ -21,7 +21,7 @@ var motorSwitch = document.getElementById("stopMotors")
 var rebootSwitch = document.getElementById("rebootDrone")
 
 var ros = new ROSLIB.Ros({
-    url: 'ws://192.168.1.125:9090'
+    url: 'ws://127.0.0.1:9090'
 })
 
 var imu = new ROSLIB.Topic({
@@ -79,8 +79,8 @@ function drawIMU(message) {
         yaw.shift()
     }
     yaw.push({ x: graphTimer, y: message.yaw })
-    pitch.push({ x: graphTimer, y: message.roll })
-    roll.push({ x: graphTimer, y: message.pitch })
+    pitch.push({ x: graphTimer, y: message.pitch })
+    roll.push({ x: graphTimer, y: message.roll })
     graphTimer += 1 / hertz
 }
 

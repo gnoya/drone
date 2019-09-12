@@ -39,7 +39,7 @@ var y_axiss = ['y_axis', 'y_axis2', 'y_axis3']
 var charts = ['chart', 'chart2', 'chart3']
 var legends = ['legend', 'legend2', 'legend3']
 var names = ['Yaw', 'Pitch', 'Roll']
-var tickValues = [[-135, -90, -45, 0, 45, 90, 135], [-60, -40, -20, 0, 20, 40, 60], [-60, -40, -20, 0, 20, 40, 60]]
+var tickValues = [[-20, -15, -10, 0, 10, 15, 20], [-25, -15, -5, 0, 5, 15, 25], [-25, -15, -5, 0, 5, 15, 25]]
 
 for (var i = 0; i < 3; i++) {
     var graph = new Rickshaw.Graph({
