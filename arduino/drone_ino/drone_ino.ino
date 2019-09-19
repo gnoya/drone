@@ -405,6 +405,7 @@ void get_ros_params(){
   }
   if (! arduino_node.getParam("min_read_rc", min_read_rc, 4)){
     //default values
+<<<<<<< HEAD
     min_read_rc[YAW] = 1250;
     min_read_rc[PITCH] = 1250;
     min_read_rc[ROLL] = 1250; 
@@ -416,6 +417,19 @@ void get_ros_params(){
     max_read_rc[PITCH] = 1800;
     max_read_rc[ROLL] = 1800; 
     max_read_rc[THROTTLE] = 1800;
+=======
+    min_read_rc[YAW] = 0;
+    min_read_rc[PITCH] = 0;
+    min_read_rc[ROLL] = 0; 
+    min_read_rc[THROTTLE] = 0;
+  }
+  if (! arduino_node.getParam("max_read_rc", max_read_rc, 4)){
+    //default values
+    max_read_rc[YAW] = 0;
+    max_read_rc[PITCH] = 0;
+    max_read_rc[ROLL] = 0; 
+    max_read_rc[THROTTLE] = 0;
+>>>>>>> 2f4d9a74fbf06393cde14625490337f71068acde
   }
 }
 void rc_timing(int channel)
